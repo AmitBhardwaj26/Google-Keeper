@@ -8,38 +8,42 @@ function CreateArea(props) {
 
   const [note, setNote] = useState({
     title: "",
-    content: ""
+    content: "",
   });
 
   function handleChange(event) {
     const { name, value } = event.target;
     // console.log(event.target);
-    setNote(prevNote => {
+    setNote((prevNote) => {
       return {
         ...prevNote,
-        [name]: value
+        [name]: value,
       };
     });
   }
 
   function submitNote(event) {
-
-    var check1=0,check2=0,i=0;
+    var check1 = 0,
+      check2 = 0,
+      i = 0;
     //do not add the blank one
-    for(i=0;i<note.content.length;i++)
-    {
-      if(note.content[i]!==" ") {check1=1; break;}
+    for (i = 0; i < note.content.length; i++) {
+      if (note.content[i] !== " ") {
+        check1 = 1;
+        break;
+      }
     }
-    for(i=0;i<note.title.length;i++)
-     {
-       if(note.title[i]!==" ") {check2=1; break;}
-     }
-    
-    if(check1===1 && check2===1) 
-    props.onAdd(note);
+    for (i = 0; i < note.title.length; i++) {
+      if (note.title[i] !== " ") {
+        check2 = 1;
+        break;
+      }
+    }
+
+    if (check1 === 1 && check2 === 1) props.onAdd(note);
     setNote({
       title: "",
-      content: ""
+      content: "",
     });
     event.preventDefault();
   }
@@ -52,12 +56,14 @@ function CreateArea(props) {
     <div>
       <form className="create-note">
         {isExpanded && (
-          <input
-            name="title"
-            onChange={handleChange}
-            value={note.title}
-            placeholder="Title"
-          />
+          <h1>
+            <input
+              name="title"
+              onChange={handleChange}
+              value={note.title}
+              placeholder="Title"
+            />
+          </h1>
         )}
 
         <textarea
