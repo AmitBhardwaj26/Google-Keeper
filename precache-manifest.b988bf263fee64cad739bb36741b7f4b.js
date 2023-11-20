@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/Google-Keeper/static/js/runtime~main.89135873.js"
   },
   {
-    "revision": "bd22238a071f1bc2a66aa588d48cf7c4",
+    "revision": "ecd22666feefccf4b1b14c793a96edb8",
     "url": "/Google-Keeper/index.html"
   }
 ];
